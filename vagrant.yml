@@ -1,0 +1,21 @@
+boxes:
+  puppetlabs/ubuntu-14.04-64-puppet: "puppetlabs/ubuntu-14.04-64-puppet"
+nodes:
+  web:
+    hostname: fulcrum.vagrant.vm
+    box: puppetlabs/ubuntu-14.04-64-puppet
+    memory: 1024
+    cpus: 1
+    networks:
+      - private_network:
+          ip: 192.168.137.16
+    provisioners:
+      - puppet:
+          manifests_path: "puppet/manifests"
+          manifest_file: "site.pp"
+          module_path: "puppet/modules"
+          working_directory: "/vagrant/puppet/manifests"
+          options: "--verbose --debug"
+    synced_folders:
+      - host: .
+        guest: /vagrant
