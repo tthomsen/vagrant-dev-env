@@ -2,7 +2,7 @@ boxes:
   puppetlabs/ubuntu-14.04-64-puppet: "puppetlabs/ubuntu-14.04-64-puppet"
 nodes:
   web:
-    hostname: fulcrum.vagrant.vm
+    hostname: web.vagrant.vm
     box: puppetlabs/ubuntu-14.04-64-puppet
     memory: 1024
     cpus: 1
